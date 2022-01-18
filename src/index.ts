@@ -1,4 +1,6 @@
-import { User } from '@/model/User.model';
+import { User } from './database/model/User.model';
+// import { User } from './database/model/User.model';
+const root = document.getElementById('root');
+const user = new User(root, 'SALMAN', 'CHOWDHURY');
 
-const user = new User('SALMAN', 'CHOWDHURY');
-console.log(user.getName());
+user.render();

@@ -1,2 +1,5 @@
 dist
 node_modules
+parcel-bundler
+.parcel-cache
+.cache

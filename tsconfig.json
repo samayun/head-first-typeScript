@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "CommonJS",
+    "module": "ES2015",
     "rootDir": "src",
     "outDir": "dist",
     "baseUrl": "src",
@@ -11,7 +11,8 @@
       "@/*": ["*"]
     },
     "moduleResolution": "node",
-    "removeComments": true
+    "removeComments": true,
+    "strict": false
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.test.ts", "__tests__", "coverage", "dist"]
