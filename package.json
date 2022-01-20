@@ -7,11 +7,12 @@
     "tsc": "tsc",
     "start": "node -r ./dist/pathRegister.js ./dist/index.js",
     "build": "webpack -w",
-    "compile:build": "tsc -w",
-    "compile:dev": "nodemon -r ./dist/pathRegister.js ./dist/index.js",
+    "webpack": "webpack ",
+    "compile:build": "webpack -w",
+    "compile:dev": "nodemon  ./dist/index.js",
     "prestart:dev": "rm -rf ./dist/",
     "prebuild": "rm -rf ./dist/",
-    "start:dev": "npm run tsc && concurrently npm:compile:*"
+    "start:dev": "npm run webpack && concurrently npm:compile:*"
   },
   "keywords": [],
   "author": "",
