@@ -1,21 +1,23 @@
-const path = require('path');
+const path = require("path");
+const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.ts',
+  mode: process.env.NODE_ENV || "development",
+  entry: "./src/index.ts",
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, "dist"),
+    filename: "index.js",
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".ts", ".tsx"],
+    plugins: [new TsConfigPathsPlugin()],
   },
   module: {
     rules: [
       {
-        test: /\.tsx?/,
-        use: 'ts-loader',
+        test: /\.ts/,
         exclude: /node_modules/,
+        loader: "awesome-typescript-loader",
       },
     ],
   },
