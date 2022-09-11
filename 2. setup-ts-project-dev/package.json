@@ -1,0 +1,28 @@
+{
+  "name": "setup-ts-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "compile:build": "tsc -w",
+    "compile:dev": "nodemon  ./dist/main.js",
+    "predev": "rm -rf ./dist/",
+    "dev": "concurrently npm:compile:*",
+    "postinstall": "npm run dev"
+  },
+  "devDependencies": {
+    "typescript": "*",
+    "nodemon": "*",
+    "concurrently": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samayun/head-first-typescript.git"
+  },
+  "author": "Samayun Chowdhury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samayun/head-first-typescript/issues"
+  },
+  "homepage": "https://github.com/samayun/head-first-typescript#readme"
+}

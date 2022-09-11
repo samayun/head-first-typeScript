@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es5",
+    /* Modules */
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+      "@/model/*": ["database/models/*"],
+      "@/seeder/*": ["database/seeder/*"],
+      "@/components/*": ["ui/components/*"],
+      "@/*": ["*"]
+    },
+    /* Type Checking */
+    "strict": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.test.ts", "__tests__", "coverage", "dist"]
+}
