@@ -1,4 +1,4 @@
-## Steps to setup typescript for development
+## Steps to setup typescript project for development
 
 - setup package.json
 
