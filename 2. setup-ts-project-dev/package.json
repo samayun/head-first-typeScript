@@ -4,16 +4,19 @@
   "description": "",
   "main": "dist/main.js",
   "scripts": {
+    "start": "node -r ./dist/pathRegister.js ./dist/main.js",
     "compile:build": "tsc -w",
-    "compile:dev": "nodemon  ./dist/main.js",
+    "compile:dev": "nodemon -r ./dist/pathRegister.js ./dist/main.js",
     "predev": "rm -rf ./dist/",
     "dev": "concurrently npm:compile:*",
     "postinstall": "npm run dev"
   },
   "devDependencies": {
-    "typescript": "*",
+    "@types/node": "^18.7.16",
+    "tsconfig-paths": "*",
+    "concurrently": "*",
     "nodemon": "*",
-    "concurrently": "*"
+    "typescript": "*"
   },
   "repository": {
     "type": "git",

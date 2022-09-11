@@ -60,3 +60,38 @@ write codes on src/main.ts and see outputs realtime on console terminal
 
 
 ```
+
+- it works on TS but not in JS. run command first: `npm i --save-dev @types/node tsconfig-paths`
+
+```ts
+// src/pathRegister.ts
+const tsConfigPaths = require('tsconfig-paths');
+const path = require('path');
+const tsConfig = require('../tsconfig.json');
+
+tsConfigPaths.register({
+  baseUrl: path.resolve(tsConfig.compilerOptions.outDir || ''),
+  paths: tsConfig.compilerOptions.paths,
+});
+```
+
+- update package.json
+
+```json
+  "scripts": {
+    "start": "node -r ./dist/pathRegister.js ./dist/main.js",
+    "compile:build": "tsc -w",
+    "compile:dev": "nodemon -r ./dist/pathRegister.js ./dist/main.js",
+    "predev": "rm -rf ./dist/",
+    "dev": "concurrently npm:compile:*",
+    "postinstall": "npm run dev"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.16",
+    "tsconfig-paths": "*",
+    "concurrently": "*",
+    "nodemon": "*",
+    "typescript": "*"
+  },
+
+```
