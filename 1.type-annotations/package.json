@@ -1,0 +1,14 @@
+{
+  "name": "1.type-annotations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "postinstall": "tsc -w"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  },
+  "author": "Samayun Chowdhury",
+  "license": "MIT"
+}
